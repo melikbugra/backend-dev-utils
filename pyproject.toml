@@ -9,11 +9,6 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 
-
-[tool.poetry.metadata]
-long_description = "README.md"
-long_description_content_type = "text/markdown"
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
