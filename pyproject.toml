@@ -2,20 +2,13 @@
 name = "backend-dev-utils"
 version = "0.0.1"
 description = "Utility functions for python backend developers."
-authors = [
-  { name="melikbugra", email="melik@melikbugraozcelik.com" },
-]
+authors = ["melikbugra <melik@melikbugraozcelik.com>"]
 license = "MIT"
 readme = "README.md"
-requires-python = ">=3.8"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]
+homepage = "https://github.com/melikbugra/backend-dev-utils"
 
-[project.urls]
-Homepage = "https://github.com/melikbugra/backend-dev-utils"
+[tool.poetry.urls]
+Homepage = ""
 Issues = "https://github.com/melikbugra/backend-dev-utils/issues"
 Author = "https://melikbugraozcelik.com"
 
