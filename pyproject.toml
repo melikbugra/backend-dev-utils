@@ -8,7 +8,7 @@ readme = "README.md"
 homepage = "https://github.com/melikbugra/backend-dev-utils"
 
 [tool.poetry.urls]
-Homepage = ""
+Homepage = "https://github.com/melikbugra/backend-dev-utils"
 Issues = "https://github.com/melikbugra/backend-dev-utils/issues"
 Author = "https://melikbugraozcelik.com"
 
@@ -20,6 +20,7 @@ black = "^24.8.0"
 pytest = "^8.3.2"
 assertpy = "^1.1"
 coverage = "^7.6.1"
+twine = "^5.1.1"
 
 [build-system]
 requires = ["poetry-core"]
