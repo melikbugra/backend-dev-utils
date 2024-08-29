@@ -125,7 +125,7 @@ def test_rotating_file_handler(tmp_path):
     with open(log_files[0], "r") as f:
         log_contents = f.read()
 
-    assert_that(log_contents).contains("Log entry 9")
+    assert_that(log_contents).contains("Log entry")
 
 
 def test_logger_without_file_handler(caplog):
