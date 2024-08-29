@@ -18,8 +18,21 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
+          
       - name: Install poetry
         run: python3 -m pip install --upgrade poetry
+
       - name: Install dependencies
         run: poetry install --with dev
-      - run: poetry run mkdocs gh-deploy --force
+
+      - name: Run tests
+        run: |
+          poetry run coverage run -m pytest -v tests
+
+      - name: Run coverage
+        run: |
+          poetry run coverage report -m --skip-empty --fail-under=100
+        
+      - name: Build documentation
+        run: |
+          poetry run mkdocs gh-deploy --force
