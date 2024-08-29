@@ -7,3 +7,4 @@ from backend_dev_utils.fastapi_helpers.fastapi_route import (
     FastAPIRoute,
 )
 from backend_dev_utils.fastapi_helpers.fastapi_app import FastAPIApp
+from backend_dev_utils.http_helpers.url import URL
