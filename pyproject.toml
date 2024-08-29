@@ -21,6 +21,10 @@ pytest = "^8.3.2"
 assertpy = "^1.1"
 coverage = "^7.6.1"
 twine = "^5.1.1"
+mkdocs-material = {version="^9.5.33", extras=["imaging"]}
+termynal = "^0.12.1"
+pymdown-extensions = "^10.9"
+markdown-include = "^0.8.1"
 
 [build-system]
 requires = ["poetry-core"]
