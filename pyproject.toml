@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "backend-dev-utils"
-version = "0.0.1"
+version = "0.0.2"
 description = "Utility functions for python backend developers."
 authors = ["melikbugra <melik@melikbugraozcelik.com>"]
 license = "MIT"
