@@ -20,8 +20,6 @@ jobs:
           path: .cache
       - name: Install poetry
         run: python3 -m pip install --upgrade poetry
-      - name: activate environment
-        run: poetry shell
       - name: Install dependencies
         run: poetry install --with dev
-      - run: mkdocs gh-deploy --force
+      - run: poetry run mkdocs gh-deploy --force
