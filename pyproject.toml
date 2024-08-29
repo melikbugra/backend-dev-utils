@@ -14,6 +14,8 @@ Author = "https://melikbugraozcelik.com"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+fastapi = {extras = ["standard"], version = "^0.112.2"}
+sqlmodel = "^0.0.21"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"
@@ -27,6 +29,7 @@ pymdown-extensions = "^10.9"
 markdown-include = "^0.8.1"
 pillow = "^10.4.0"
 cairosvg = "^2.7.1"
+ipykernel = "^6.29.5"
 
 [build-system]
 requires = ["poetry-core"]
