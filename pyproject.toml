@@ -2,9 +2,15 @@
 name = "backend-dev-utils"
 version = "0.0.1"
 description = "Utility functions for python backend developers."
-authors = ["melikbugra"]
+authors = ["melikbugra <melik@melikbugraozcelik.com>"]
 license = "MIT"
 readme = "README.md"
+homepage = "https://github.com/melikbugra/backend-dev-utils"
+
+[tool.poetry.urls]
+Homepage = "https://github.com/melikbugra/backend-dev-utils"
+Issues = "https://github.com/melikbugra/backend-dev-utils/issues"
+Author = "https://melikbugraozcelik.com"
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -14,6 +20,11 @@ black = "^24.8.0"
 pytest = "^8.3.2"
 assertpy = "^1.1"
 coverage = "^7.6.1"
+twine = "^5.1.1"
+mkdocs-material = {version="^9.5.33", extras=["imaging"]}
+termynal = "^0.12.1"
+pymdown-extensions = "^10.9"
+markdown-include = "^0.8.1"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,0 +1,63 @@
+site_name: "Backend Development Utilities"
+site_url: "https://backend-dev-utils.github.io/backend-dev-utils/"
+site_description: "A library to provide python backend developers a bunch of useful shortcuts and wrappers"
+
+repo_name: "backend-dev-utils"
+repo_url: "https://github.com/melikbugra/backend-dev-utils"
+edit_uri: "edit/main/docs/"
+
+copyright: "Copyright &copy; 2024 Danil Akhtarov"
+
+nav:
+  - "Home": index.md
+  - "Logger Manager": logger_manager.md
+  - "Changelog": changelog.md
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: black
+      accent: yellow
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - termynal:
+      title: "shell"
+      buttons: "macos"
+      prompt_literal_start:
+        - "$"
+        - ">"
+        - ">>>"
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - markdown_include.include:
+      base_path: .
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg

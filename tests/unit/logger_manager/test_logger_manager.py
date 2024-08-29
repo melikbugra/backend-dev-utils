@@ -122,7 +122,7 @@ def test_rotating_file_handler(tmp_path):
     assert_that(log_files).is_not_empty()
 
     # Read the contents of the first log file
-    with open(log_files[-1], "r") as f:
+    with open(log_files[0], "r") as f:
         log_contents = f.read()
 
     assert_that(log_contents).contains("Log entry 9")
