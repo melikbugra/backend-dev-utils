@@ -13,6 +13,7 @@ nav:
   - "Logger Manager": logger_manager.md
   - "FastAPI Helpers": fastapi_helpers.md
   - "HTTP Helpers": http_helpers.md
+  - "Design Patterns": design_patterns.md
   - "Changelog": changelog.md
 
 theme:
