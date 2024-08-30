@@ -51,11 +51,13 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           branch: ${{ github.ref }}
+
+      - name: Create CNAME file
+        run: |
+          echo 'backend-dev-utils.melikbugraozcelik.com' > site/CNAME
         
       - name: Build documentation
         run: |
           poetry run mkdocs gh-deploy --force
 
-      - name: Create CNAME file
-        run: |
-          echo 'backend-dev-utils.melikbugraozcelik.com' > site/CNAME
+      
