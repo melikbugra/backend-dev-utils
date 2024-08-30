@@ -1,4 +1,5 @@
 [![PyPI Release🐍](https://github.com/melikbugra/backend-dev-utils/actions/workflows/python-publish.yml/badge.svg?branch=main)](https://github.com/melikbugra/backend-dev-utils/actions/workflows/python-publish.yml)
+![Coverage](./coverage.svg)
 
 # Backend Development Utilities
 
