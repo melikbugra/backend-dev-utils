@@ -6,7 +6,7 @@ repo_name: "backend-dev-utils"
 repo_url: "https://github.com/melikbugra/backend-dev-utils"
 edit_uri: "edit/main/docs/"
 
-copyright: "Copyright &copy; 2024 Danil Akhtarov"
+copyright: "Copyright &copy; 2024 Melik Buğra Özçelik"
 
 nav:
   - "Home": index.md
