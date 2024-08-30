@@ -3,7 +3,7 @@
 Backend Development Utilities is a library to provide python backend developers a bunch of useful shortcuts and wrappers.
 
 [![PyPI Release🐍](https://github.com/melikbugra/backend-dev-utils/actions/workflows/python-publish.yml/badge.svg?branch=main)](https://github.com/melikbugra/backend-dev-utils/actions/workflows/python-publish.yml)
-![Coverage](https://github.com/melikbugra/backend-dev-utils/blob/main/coverage.svg)
+![Coverage](coverage.svg)
 
 <!-- termynal -->
 
