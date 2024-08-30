@@ -5,7 +5,7 @@ description = "Utility functions for python backend developers."
 authors = ["melikbugra <melik@melikbugraozcelik.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://melikbugra.github.io/backend-dev-utils/"
+homepage = "https://backend-dev-utils.melikbugraozcelik.com/"
 
 [tool.poetry.urls]
 Homepage = "https://github.com/melikbugra/backend-dev-utils"
