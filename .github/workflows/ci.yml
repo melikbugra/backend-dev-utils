@@ -33,27 +33,6 @@ jobs:
         run: |
           poetry run coverage report -m --skip-empty --fail-under=100
 
-      - name: Coverage Badge
-        run: |
-          poetry run coverage-badge -f -o docs/coverage.svg
-
-      - name: Commit files
-        if: steps.verify-changed-files.outputs.files_changed == 'true'
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git checkout main
-          git add docs/coverage.svg
-          git commit -m "Updated coverage.svg"
-          git push origin main
-
-      - name: Push changes
-        if: steps.verify-changed-files.outputs.files_changed == 'true'
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.github_token }}
-          branch: ${{ github.ref }}
-
       - name: Create CNAME file
         run: |
           echo 'backend-dev-utils.melikbugraozcelik.com' > docs/CNAME
