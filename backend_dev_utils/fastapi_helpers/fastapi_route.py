@@ -1,8 +1,5 @@
-from fastapi import APIRouter, Depends, Response
-from sqlmodel import Session
+from fastapi import APIRouter
 from sqlmodel import SQLModel
-import requests
-import json
 
 
 class FastAPIRoute:
@@ -14,8 +11,6 @@ class FastAPIRoute:
         methods: list[str],
         response_model: SQLModel = None,
         name: str = None,
-        input_schema: SQLModel = None,
-        input_params: dict = None,
     ):
         self.router = router
         self.path = path
@@ -23,8 +18,6 @@ class FastAPIRoute:
         self.methods = methods
         self.response_model = response_model
         self.name = name
-        self.input_schema = input_schema
-        self.input_params = input_params
 
         self._add_to_router()
 
