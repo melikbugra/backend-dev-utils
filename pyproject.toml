@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "backend-dev-utils"
-version = "0.0.2"
+version = "0.1.0"
 description = "Utility functions for python backend developers."
 authors = ["melikbugra <melik@melikbugraozcelik.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/melikbugra/backend-dev-utils"
+homepage = "https://melikbugra.github.io/backend-dev-utils/"
 
 [tool.poetry.urls]
 Homepage = "https://github.com/melikbugra/backend-dev-utils"
@@ -16,6 +16,7 @@ Author = "https://melikbugraozcelik.com"
 python = "^3.11"
 fastapi = {extras = ["standard"], version = "^0.112.2"}
 sqlmodel = "^0.0.21"
+requests = "^2.32.3"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.8.0"

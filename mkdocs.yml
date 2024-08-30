@@ -11,6 +11,8 @@ copyright: "Copyright &copy; 2024 Danil Akhtarov"
 nav:
   - "Home": index.md
   - "Logger Manager": logger_manager.md
+  - "FastAPI Helpers": fastapi_helpers.md
+  - "HTTP Helpers": http_helpers.md
   - "Changelog": changelog.md
 
 theme:
