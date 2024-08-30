@@ -35,14 +35,14 @@ jobs:
 
       - name: Coverage Badge
         run: |
-          poetry run coverage-badge -f -o coverage.svg
+          poetry run coverage-badge -f -o docs/coverage.svg
 
       - name: Commit files
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add coverage.svg
+          git add docs/coverage.svg
           git commit -m "Updated coverage.svg"
 
       - name: Push changes
