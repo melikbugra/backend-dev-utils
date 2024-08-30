@@ -10,8 +10,6 @@ def test_fastapi_route_init(test_router):
     methods = ["GET"]
     response_model = None
     name = "test"
-    input_schema = None
-    input_params = None
 
     test_route = FastAPIRoute(
         router=test_router,
@@ -20,8 +18,6 @@ def test_fastapi_route_init(test_router):
         methods=methods,
         response_model=response_model,
         name=name,
-        input_schema=input_schema,
-        input_params=input_params,
     )
 
     assert_that(test_route.router).is_equal_to(test_router)
@@ -33,8 +29,6 @@ def test_add_to_router(test_router: APIRouter):
     methods = ["GET"]
     response_model = None
     name = "test"
-    input_schema = None
-    input_params = None
 
     test_route = FastAPIRoute(
         router=test_router,
@@ -43,8 +37,6 @@ def test_add_to_router(test_router: APIRouter):
         methods=methods,
         response_model=response_model,
         name=name,
-        input_schema=input_schema,
-        input_params=input_params,
     )
 
     assert_that(test_route.router.routes).is_length(1)
