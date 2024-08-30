@@ -54,7 +54,7 @@ jobs:
 
       - name: Create CNAME file
         run: |
-          echo 'backend-dev-utils.melikbugraozcelik.com' > site/CNAME
+          echo 'backend-dev-utils.melikbugraozcelik.com' > docs/CNAME
         
       - name: Build documentation
         run: |
