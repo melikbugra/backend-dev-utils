@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "backend-dev-utils"
-version = "0.1.0"
+version = "0.1.1"
 description = "Utility functions for python backend developers."
 authors = ["melikbugra <melik@melikbugraozcelik.com>"]
 license = "MIT"
@@ -31,6 +31,7 @@ markdown-include = "^0.8.1"
 pillow = "^10.4.0"
 cairosvg = "^2.7.1"
 ipykernel = "^6.29.5"
+coverage-badge = "^1.1.2"
 
 [build-system]
 requires = ["poetry-core"]
