@@ -4,6 +4,9 @@ from assertpy import assert_that
 from backend_dev_utils.design_patterns.singletons.named_singleton.named_singleton_base import (
     NamedSingletonBase,
 )
+from backend_dev_utils.design_patterns.singletons.exceptions import (
+    SingletonInstanceNotFoundError,
+)
 
 
 def test_named_singleton():
@@ -64,3 +67,51 @@ def test_named_singleton_meta_name_is_first_positional_argument():
 
     assert_that(obj.name).is_equal_to("instance")
     assert_that(obj.value).is_equal_to(10)
+
+
+def test_reset_instance():
+    class TestClass(NamedSingletonBase):
+        def __init__(self, name: str, value: int) -> None:
+            self.name = name
+            self.value = value
+
+    obj1 = TestClass(name="instance1", value=10)
+
+    TestClass.reset_instance(name="instance1")
+
+    obj2 = TestClass(name="instance1", value=20)
+
+    assert_that(obj1.value).is_equal_to(10)
+    assert_that(obj2.value).is_equal_to(20)
+    assert_that(obj1).is_not_equal_to(obj2)
+    assert_that(obj1.name).is_equal_to(obj2.name)
+
+
+def test_reset_missing_argument():
+    class TestClass(NamedSingletonBase):
+        def __init__(self, name: str, value: int) -> None:
+            self.name = name
+            self.value = value
+
+    obj = TestClass(name="instance1", value=10)
+
+    assert_that(obj.name).is_equal_to("instance1")
+    assert_that(obj.value).is_equal_to(10)
+
+    with pytest.raises(TypeError):
+        TestClass.reset_instance()
+
+
+def test_reset_non_existing_instance():
+    class TestClass(NamedSingletonBase):
+        def __init__(self, name: str, value: int) -> None:
+            self.name = name
+            self.value = value
+
+    obj = TestClass(name="instance1", value=10)
+
+    assert_that(obj.name).is_equal_to("instance1")
+    assert_that(obj.value).is_equal_to(10)
+
+    with pytest.raises(SingletonInstanceNotFoundError):
+        TestClass.reset_instance(name="instance2")
