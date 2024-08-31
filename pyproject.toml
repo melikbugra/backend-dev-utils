@@ -1,20 +1,20 @@
 [tool.poetry]
 name = "backend-dev-utils"
-version = "0.1.1"
+version = "0.1.2"
 description = "Utility functions for python backend developers."
 authors = ["melikbugra <melik@melikbugraozcelik.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://backend-dev-utils.melikbugraozcelik.com/"
+homepage = "https://backend-dev-utils.melikbugraozcelik.com"
 
 [tool.poetry.urls]
-Homepage = "https://github.com/melikbugra/backend-dev-utils"
+Homepage = "https://backend-dev-utils.melikbugraozcelik.com"
 Issues = "https://github.com/melikbugra/backend-dev-utils/issues"
 Author = "https://melikbugraozcelik.com"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = {extras = ["standard"], version = "^0.112.2"}
+fastapi = { extras = ["standard"], version = "^0.112.2" }
 sqlmodel = "^0.0.21"
 requests = "^2.32.3"
 
@@ -24,7 +24,7 @@ pytest = "^8.3.2"
 assertpy = "^1.1"
 coverage = "^7.6.1"
 twine = "^5.1.1"
-mkdocs-material = {version="^9.5.33", extras=["imaging"]}
+mkdocs-material = { version = "^9.5.33", extras = ["imaging"] }
 termynal = "^0.12.1"
 pymdown-extensions = "^10.9"
 markdown-include = "^0.8.1"
@@ -32,6 +32,7 @@ pillow = "^10.4.0"
 cairosvg = "^2.7.1"
 ipykernel = "^6.29.5"
 coverage-badge = "^1.1.2"
+pytest-cov = "^5.0.0"
 
 [build-system]
 requires = ["poetry-core"]

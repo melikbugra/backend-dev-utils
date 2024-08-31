@@ -1,4 +1,4 @@
 class InvalidURLError(Exception):
     def __init__(self, url):
-        message = f"Invalid URL: {url}"
-        super().__init__(message)
+        self.message = f"Invalid URL: {url}"
+        super().__init__(self.message)
