@@ -20,21 +20,11 @@ pip install backend-dev-utils
 
 ## Usage
 
-Here are some examples of how to use the utility functions:
-
-### Logger Manager
-
-```python
-from backend_dev_utils import get_logger
-
-logger = get_logger(
-    name="my-logger",
-)
-```
+Please see the [Documentation](https://backend-dev-utils.melikbugraozcelik.com/) for the usage and tutorials.
 
 ## Contributing
 
-Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request. Make sure to follow the [contribution guidelines](CONTRIBUTING.md) when contributing to this project.
+Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
 
 ## License
 
