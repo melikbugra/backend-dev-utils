@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
 
 from backend_dev_utils.fastapi_helpers.fastapi_router import FastAPIRouter
 from backend_dev_utils.fastapi_helpers.fastapi_route import FastAPIRoute
@@ -7,14 +7,14 @@ from backend_dev_utils.fastapi_helpers.fastapi_route import FastAPIRoute
 class FastAPIApp:
     def __new__(
         cls,
-        routers: list[FastAPIRouter] = [],
+        routers: list[APIRouter] = [],
         title: str = "FastAPI App",
         description: str = "",
         version: str = "0.0.1",
         openapi_url: str = "/openapi.json",
         docs_url: str = "/docs",
         root_path: str = "",
-        include_base_router: bool = True,
+        include_base_router: bool = False,
     ):
         instance = super().__new__(cls)
         init_result = instance._init_app(
@@ -32,7 +32,7 @@ class FastAPIApp:
 
     def _init_app(
         self,
-        routers: list[FastAPIRouter],
+        routers: list[APIRouter],
         title: str,
         description: str,
         version: str,

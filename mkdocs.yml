@@ -1,5 +1,5 @@
 site_name: "Backend Development Utilities"
-site_url: "https://backend-dev-utils.melikbugraozcelik.com/"
+site_url: "https://backend-dev-utils.melikbugraozcelik.com"
 site_description: "A library to provide python backend developers a bunch of useful shortcuts and wrappers"
 
 repo_name: "backend-dev-utils"
@@ -14,7 +14,7 @@ nav:
   - "FastAPI Helpers": fastapi_helpers.md
   - "HTTP Helpers": http_helpers.md
   - "Design Patterns": design_patterns.md
-  - "Changelog": changelog.md
+  - "Database Handlers": database_handlers.md
 
 theme:
   name: material
