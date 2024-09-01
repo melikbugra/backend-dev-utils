@@ -1,4 +1,4 @@
-Database Handlers are Singleton or NamedSingleton classes to handle database connections, engines and sessions using [SQLModel](https://sqlmodel.tiangolo.com/).
+Database Handlers are [Singleton](design_patterns.md#singleton)  or [NamedSingleton](design_patterns.md#namedsingleton)  classes to handle database connections, engines and sessions using [SQLModel](https://sqlmodel.tiangolo.com/).
 
 
 ### SingleDatabaseHandler
@@ -14,7 +14,7 @@ SingleDatabaseHandler is a singleton to create a db instance. Once you create an
 
 ### MultipleDatabaseHandler
 
-MultipleDatabaseHandler is almost the same with SingleDatabaseHandler, but it can handle multiple db instance with different names. It is a NamedSingleton (please see the NamedSingleton in DesignPatterns module).
+MultipleDatabaseHandler is almost the same with SingleDatabaseHandler, but it can handle multiple db instance with different names. It is a NamedSingleton (please see the [NamedSingleton](design_patterns.md#namedsingleton) in DesignPatterns module).
 
 ```python
 
