@@ -1,4 +1,4 @@
-from backend_dev_utils.database_handler.single_database_handler import (
+from backend_dev_utils.database_handlers.single_database_handler import (
     SingleDatabaseHandler,
 )
 

@@ -4,7 +4,7 @@ from sqlmodel import SQLModel, Field, create_engine, Session, select
 from sqlalchemy.engine.base import Engine
 from sqlalchemy import inspect
 
-from backend_dev_utils.database_handler.multiple_database_handler import (
+from backend_dev_utils.database_handlers.multiple_database_handler import (
     MultipleDatabaseHandler,
 )
 

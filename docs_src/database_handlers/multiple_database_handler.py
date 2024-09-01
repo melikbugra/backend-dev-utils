@@ -1,4 +1,4 @@
-from backend_dev_utils.database_handler.multiple_database_handler import (
+from backend_dev_utils.database_handlers.multiple_database_handler import (
     MultipleDatabaseHandler,
 )
 
