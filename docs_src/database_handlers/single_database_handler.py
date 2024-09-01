@@ -1,6 +1,4 @@
-from backend_dev_utils.database_handlers.single_database_handler import (
-    SingleDatabaseHandler,
-)
+from backend_dev_utils import SingleDatabaseHandler
 
 db = SingleDatabaseHandler(
     database_uri="sqlite:///:memory:", echo=True, create_tables=True
