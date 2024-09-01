@@ -2,10 +2,10 @@
 
 import pytest
 from sqlmodel import SQLModel, create_engine
-from backend_dev_utils.database_handler.single_database_handler import (
+from backend_dev_utils.database_handlers.single_database_handler import (
     SingleDatabaseHandler,
 )
-from backend_dev_utils.database_handler.multiple_database_handler import (
+from backend_dev_utils.database_handlers.multiple_database_handler import (
     MultipleDatabaseHandler,
 )
 
