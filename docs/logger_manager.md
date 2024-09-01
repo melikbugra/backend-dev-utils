@@ -11,7 +11,7 @@ With only name argument provided, it will return a stream logger (which only log
 my-logger - INFO - Hello World!
 ```
 
-Or, if you provide the argument *file_name*, the logger will automatically create a logger that logs to file.
+Or, if you provide the argument *file_path*, the logger will automatically create a logger that logs to file.
 
 ```python
 
@@ -19,7 +19,7 @@ Or, if you provide the argument *file_name*, the logger will automatically creat
 
 ```
 
-Finally, if you provide the *rotating_file_name* argument, the output file size will be limited by *max_bytes* argument, and at most *backup_count* of files will be created named as *log-file.log.1*, *log-file.log.2* etc. And when all limits are full and it needs to write a new log file, it starts deleting from the oldest one.
+Finally, if you provide the *rotating_file_path* argument, the output file size will be limited by *max_bytes* argument, and at most *backup_count* of files will be created named as *log-file.log.1*, *log-file.log.2* etc. And when all limits are full and it needs to write a new log file, it starts deleting from the oldest one.
 
 ```python
 

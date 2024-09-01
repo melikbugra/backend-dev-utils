@@ -20,8 +20,8 @@ class LoggerManager(NamedSingletonBase):
         self,
         name: str,
         level: int,
-        file_name: str = None,
-        rotating_file_name: str = None,
+        file_path: str = None,
+        rotating_file_path: str = None,
         max_bytes: int = 10000,
         backup_count: int = 5,
         stream_format: str = "%(name)s - %(levelname)s - %(message)s",
@@ -40,16 +40,16 @@ class LoggerManager(NamedSingletonBase):
                 stream_handler.setFormatter(stream_formatter)
                 logger.addHandler(stream_handler)
 
-                if file_name:
-                    file_handler = logging.FileHandler(file_name)
+                if file_path:
+                    file_handler = logging.FileHandler(file_path)
                     file_handler.setLevel(level)
                     file_formatter = logging.Formatter(file_format)
                     file_handler.setFormatter(file_formatter)
                     logger.addHandler(file_handler)
 
-                if rotating_file_name:
+                if rotating_file_path:
                     rotating_handler = logging.handlers.RotatingFileHandler(
-                        rotating_file_name, maxBytes=max_bytes, backupCount=backup_count
+                        rotating_file_path, maxBytes=max_bytes, backupCount=backup_count
                     )
                     rotating_handler.setLevel(level)
                     rotating_file_formatter = logging.Formatter(file_format)
@@ -64,8 +64,8 @@ class LoggerManager(NamedSingletonBase):
 def get_logger(
     name: str = "logger",
     level: int = logging.INFO,
-    file_name: str = None,
-    rotating_file_name: str = None,
+    file_path: str = None,
+    rotating_file_path: str = None,
     max_bytes: int = 10000,
     backup_count: int = 5,
     stream_format: str = "%(name)s - %(levelname)s - %(message)s",
@@ -76,8 +76,8 @@ def get_logger(
     return logger_manager.get_logger(
         name,
         level,
-        file_name,
-        rotating_file_name,
+        file_path,
+        rotating_file_path,
         max_bytes,
         backup_count,
         stream_format,

@@ -82,7 +82,7 @@ def test_file_handler(tmp_path):
     - The log file should include the logger's name.
     """
     log_file = tmp_path / "test.log"
-    logger = get_logger(name="TestFileLogger", file_name=str(log_file))
+    logger = get_logger(name="TestFileLogger", file_path=str(log_file))
 
     logger.info("This is a test log message")
 
@@ -109,7 +109,7 @@ def test_rotating_file_handler(tmp_path):
     log_file = tmp_path / "rotating_test.log"
     logger = get_logger(
         name="TestRotatingLogger",
-        rotating_file_name=str(log_file),
+        rotating_file_path=str(log_file),
         max_bytes=50,
         backup_count=2,
         file_format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",  # Set the formatter
