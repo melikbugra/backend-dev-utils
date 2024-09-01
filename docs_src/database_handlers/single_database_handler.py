@@ -5,3 +5,6 @@ db = SingleDatabaseHandler(
 )
 
 session = db.get_session()
+
+
+db2 = SingleDatabaseHandler()

@@ -34,7 +34,6 @@ class LoggerManager(NamedSingletonBase):
                 logger = logging.getLogger(name)
                 logger.setLevel(level)
 
-                # Set up the stream handler
                 stream_handler = logging.StreamHandler()
                 stream_handler.setLevel(level)
                 stream_formatter = logging.Formatter(stream_format)
