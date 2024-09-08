@@ -14,7 +14,7 @@ class FastAPIApp:
         openapi_url: str = "/openapi.json",
         docs_url: str = "/docs",
         root_path: str = "",
-        include_base_router: bool = False,
+        include_default_router: bool = False,
     ):
         instance = super().__new__(cls)
         init_result = instance._init_app(
@@ -25,7 +25,7 @@ class FastAPIApp:
             openapi_url=openapi_url,
             docs_url=docs_url,
             root_path=root_path,
-            include_base_router=include_base_router,
+            include_default_router=include_default_router,
         )
 
         return init_result
@@ -39,7 +39,7 @@ class FastAPIApp:
         openapi_url: str,
         docs_url: str,
         root_path: str,
-        include_base_router: bool,
+        include_default_router: bool,
     ):
         self.app = FastAPI(
             title=title,
@@ -50,23 +50,23 @@ class FastAPIApp:
             root_path=root_path,
         )
 
-        if include_base_router:
-            self._add_base_router()
+        if include_default_router:
+            self._add_default_router()
 
         for router in routers:
             self.app.include_router(router)
 
         return self.app
 
-    def _add_base_router(self):
-        base_router = FastAPIRouter(tags=["base-router"])
+    def _add_default_router(self):
+        default_router = FastAPIRouter(tags=["default-router"])
         FastAPIRoute(
-            router=base_router,
+            router=default_router,
             path="/",
             endpoint=lambda: {"message": "Hello World!"},
             methods=["GET"],
             response_model=None,
             name="hello-world",
         )
-        self.app.include_router(base_router)
+        self.app.include_router(default_router)
         return self.app
