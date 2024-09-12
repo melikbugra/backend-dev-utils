@@ -14,6 +14,10 @@ Assuming that you put this code snippet in *main.py*, you can run it by:
 $ fastapi run main.py
 ```
 
+And this is what you will get at "http://localhost:8000/docs:
+
+![](./img/default_api.png "Default Router")
+
 This was a basic application that contains only the default route that I include in the app. But if you don't want to include it, and create your own routers and routes:
 
 ```python

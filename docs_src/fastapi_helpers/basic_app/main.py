@@ -1,4 +1,4 @@
 from backend_dev_utils import FastAPIApp
 
 
-app = FastAPIApp(include_default_router=True)
+app = FastAPIApp(title="My FastAPI App", version="1.0.0")
