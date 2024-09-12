@@ -24,7 +24,7 @@ def test_init_invalid_url():
 
 def test_with_scheme():
     url = URL("http://www.example.com")
-    url.with_scheme("https")
+    url2 = url.with_scheme("https")
 
     assert_that(url).is_instance_of(URL)
     assert_that(url.url_string).is_equal_to("https://www.example.com")
@@ -33,6 +33,8 @@ def test_with_scheme():
     assert_that(url.path).is_equal_to("")
     assert_that(url.query).is_equal_to("")
     assert_that(url.fragment).is_equal_to("")
+    assert_that(url2).is_instance_of(URL)
+    assert_that(str(url2)).is_equal_to("https://www.example.com")
 
 
 def test_str():
@@ -74,7 +76,7 @@ def test_properties_with_path_query_fragment():
 
 def test_with_netloc():
     url = URL("http://www.example.com")
-    url.with_netloc("www.example.org")
+    url2 = url.with_netloc("www.example.org")
 
     assert_that(url).is_instance_of(URL)
     assert_that(url.url_string).is_equal_to("http://www.example.org")
@@ -83,11 +85,13 @@ def test_with_netloc():
     assert_that(url.path).is_equal_to("")
     assert_that(url.query).is_equal_to("")
     assert_that(url.fragment).is_equal_to("")
+    assert_that(url2).is_instance_of(URL)
+    assert_that(str(url2)).is_equal_to("http://www.example.org")
 
 
 def test_with_path():
     url = URL("http://www.example.com")
-    url.with_path("/new/path")
+    url2 = url.with_path("/new/path")
 
     assert_that(url).is_instance_of(URL)
     assert_that(url.url_string).is_equal_to("http://www.example.com/new/path")
@@ -96,11 +100,13 @@ def test_with_path():
     assert_that(url.path).is_equal_to("/new/path")
     assert_that(url.query).is_equal_to("")
     assert_that(url.fragment).is_equal_to("")
+    assert_that(url2).is_instance_of(URL)
+    assert_that(str(url2)).is_equal_to("http://www.example.com/new/path")
 
 
 def test_with_fragment():
     url = URL("http://www.example.com")
-    url.with_fragment("section1")
+    url2 = url.with_fragment("section1")
 
     assert_that(url).is_instance_of(URL)
     assert_that(url.url_string).is_equal_to("http://www.example.com#section1")
@@ -109,11 +115,13 @@ def test_with_fragment():
     assert_that(url.path).is_equal_to("")
     assert_that(url.query).is_equal_to("")
     assert_that(url.fragment).is_equal_to("section1")
+    assert_that(url2).is_instance_of(URL)
+    assert_that(str(url2)).is_equal_to("http://www.example.com#section1")
 
 
 def test_with_query_param():
     url = URL("http://www.example.com")
-    url.with_query_param("param1", "value1")
+    url2 = url.with_query_param("param1", "value1")
 
     assert_that(url).is_instance_of(URL)
     assert_that(url.url_string).is_equal_to("http://www.example.com?param1=value1")
@@ -122,11 +130,13 @@ def test_with_query_param():
     assert_that(url.path).is_equal_to("")
     assert_that(url.query).is_equal_to("param1=value1")
     assert_that(url.fragment).is_equal_to("")
+    assert_that(url2).is_instance_of(URL)
+    assert_that(str(url2)).is_equal_to("http://www.example.com?param1=value1")
 
 
 def test_with_query_param_with_existing_query():
     url = URL("http://www.example.com?param1=value1")
-    url.with_query_param("param2", "value2")
+    url2 = url.with_query_param("param2", "value2")
 
     assert_that(url).is_instance_of(URL)
     assert_that(url.url_string).is_equal_to(
@@ -137,11 +147,15 @@ def test_with_query_param_with_existing_query():
     assert_that(url.path).is_equal_to("")
     assert_that(url.query).is_equal_to("param1=value1&param2=value2")
     assert_that(url.fragment).is_equal_to("")
+    assert_that(url2).is_instance_of(URL)
+    assert_that(str(url2)).is_equal_to(
+        "http://www.example.com?param1=value1&param2=value2"
+    )
 
 
 def test_delete_query_param():
     url = URL("http://www.example.com?param1=value1&param2=value2")
-    url.delete_query_param("param1")
+    url2 = url.delete_query_param("param1")
 
     assert_that(url).is_instance_of(URL)
     assert_that(url.url_string).is_equal_to("http://www.example.com?param2=value2")
@@ -150,6 +164,8 @@ def test_delete_query_param():
     assert_that(url.path).is_equal_to("")
     assert_that(url.query).is_equal_to("param2=value2")
     assert_that(url.fragment).is_equal_to("")
+    assert_that(url2).is_instance_of(URL)
+    assert_that(str(url2)).is_equal_to("http://www.example.com?param2=value2")
 
 
 def test_get_query_params():

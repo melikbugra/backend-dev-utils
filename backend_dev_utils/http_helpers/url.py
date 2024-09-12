@@ -62,15 +62,21 @@ class URL:
         self.parsed_url = self.parsed_url._replace(scheme=scheme)
         self.url_string = urlunparse(self.parsed_url)
 
+        return self
+
     def with_netloc(self, netloc: str) -> None:
         """Updates the network location (domain) of the URL."""
         self.parsed_url = self.parsed_url._replace(netloc=netloc)
         self.url_string = urlunparse(self.parsed_url)
 
+        return self
+
     def with_path(self, path: str) -> None:
         """Updates the path of the URL."""
         self.parsed_url = self.parsed_url._replace(path=path)
         self.url_string = urlunparse(self.parsed_url)
+
+        return self
 
     def with_query_param(self, key: str, value: str) -> None:
         """Updates or adds a specific query parameter in the URL."""
@@ -79,6 +85,8 @@ class URL:
         new_query_string = urlencode(query_params, doseq=True)
         self.parsed_url = self.parsed_url._replace(query=new_query_string)
         self.url_string = urlunparse(self.parsed_url)
+
+        return self
 
     def delete_query_param(self, key: str) -> None:
         """Deletes a specific query parameter from the URL."""
@@ -89,7 +97,11 @@ class URL:
         self.parsed_url = self.parsed_url._replace(query=new_query_string)
         self.url_string = urlunparse(self.parsed_url)
 
+        return self
+
     def with_fragment(self, fragment: str) -> None:
         """Updates the fragment (anchor) of the URL."""
         self.parsed_url = self.parsed_url._replace(fragment=fragment)
         self.url_string = urlunparse(self.parsed_url)
+
+        return self
