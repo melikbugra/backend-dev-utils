@@ -26,8 +26,8 @@ class FastAPIApp:
             root_path=root_path,
         )
 
-        self.routers: list = routers
-        self.routes: list = routes
+        self.routers: list = []
+        self.routes: list = []
 
         if include_default_router:
             self._add_default_router()

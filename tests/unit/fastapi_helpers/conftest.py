@@ -37,9 +37,9 @@ def client(fastapi_app: FastAPIApp):
     return TestClient(fastapi_app.app)
 
 
-@pytest.fixture
-def test_router():
-    return FastAPIRouter(prefix="/test", tags=["test-router"])
+# @pytest.fixture
+# def test_router():
+#     return FastAPIRouter(prefix="/test", tags=["test-router"])
 
 
 @pytest.fixture

@@ -22,7 +22,7 @@ def test_fastapi_router_with_default_tags():
     assert_that(router.router.tags).is_length(1)
 
 
-def test_fastapi_router_instantiation():
+def test_fastapi_router_init():
     router = FastAPIRouter()
     assert_that(router.router).is_instance_of(APIRouter)
 
@@ -35,3 +35,10 @@ def test_fastapi_router_init_router(test_route: FastAPIRoute):
     assert_that(router.router).is_instance_of(APIRouter)
     assert_that(router.router.prefix).is_equal_to(prefix)
     assert_that(router.router.tags).is_equal_to(tags)
+
+
+def test_add_route(test_route: FastAPIRoute):
+    router = FastAPIRouter()
+    router.add_route(test_route)
+
+    assert_that(router.routes).contains(test_route)

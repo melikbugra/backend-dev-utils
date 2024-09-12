@@ -11,7 +11,7 @@ class FastAPIRouter:
         tags: list[str] = ["api-router"],
     ):
         self.router = APIRouter(prefix=prefix, tags=tags)
-        self.routes: list = routes
+        self.routes: list = []
 
         for route in routes:
             self.add_route(route)
