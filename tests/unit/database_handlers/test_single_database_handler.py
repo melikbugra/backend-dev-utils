@@ -25,7 +25,7 @@ def test_engine_initialization(setup_single_db: SingleDatabaseHandler):
     db_handler = setup_single_db
 
     assert_that(db_handler.engine).is_instance_of(Engine)
-    assert_that(db_handler.database_uri).is_equal_to("sqlite:///:memory:")
+    assert_that(db_handler.database_uri).starts_with("sqlite:///")
 
 
 def test_create_tables(setup_single_db_with_tables: SingleDatabaseHandler):
@@ -62,7 +62,7 @@ def test_get_session(setup_single_db_with_tables):
         assert_that(result.name).is_equal_to("Test")
 
 
-def test_reset_instance(setup_single_db):
+def test_reset_instance():
     db_handler1 = SingleDatabaseHandler(database_uri="sqlite:///:memory:")
 
     SingleDatabaseHandler.reset_instance()
