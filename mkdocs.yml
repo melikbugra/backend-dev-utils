@@ -18,6 +18,7 @@ nav:
   - "HTTP Helpers": http_helpers.md
   - "Design Patterns": design_patterns.md
   - "Database Handlers": database_handlers.md
+  - "Change Log": change_log.md
 
 theme:
   name: material
