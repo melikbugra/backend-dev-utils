@@ -21,22 +21,16 @@ Then you can change its scheme, netloc, path, params and fragment:
 >>> from backend_dev_utils import URL
 >>> url = URL("http://www.example.com")
 >>> url.with_scheme("https")
->>> print(url)
 https://www.example.com
 >>> url.with_netloc("example2.net")
->>> print(url)
 https://example2.net
 >>> url.with_path("/hello/world")
->>> print(url)
 https://example2.net/hello/world
 >>> url.with_query_param(key="hello", value="world")
->>> print(url)
 https://example2.net/hello/world?hello=world
 >>> url.delete_query_param("hello")
->>> print(url)
 https://example2.net/hello/world
 >>> url.with_fragment("hello")
->>> print(url)
 https://example2.net/hello/world#hello
 ```
 
