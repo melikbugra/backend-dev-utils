@@ -7,11 +7,8 @@ def hello_endpoint(name: str):
 
 hello_route = FastAPIRoute(path="/hello", endpoint=hello_endpoint, methods=["GET"])
 
-my_router = FastAPIRouter(prefix="/api/v1", tags=["my-router"])
-my_router.add_route(hello_route)
-
 fastapi_app = FastAPIApp(
-    routers=[my_router],
+    routes=[hello_route],
     title="Hello API",
     description="An API to say hello.",
     version="0.0.1",

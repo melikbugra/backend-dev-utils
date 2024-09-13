@@ -1,0 +1,22 @@
+@media (prefers-color-scheme: light) {
+  /* Change the background color of the header */
+  .md-header {
+    background-color: #2e22d4;
+  }
+
+
+  /* Change the text color in code blocks */
+  .highlight code {
+    color: #333333;
+  }
+
+  /* Change the footer background color */
+  .md-footer {
+    background-color: #2e22d4; /* Dark background */
+  }
+
+  /* Change the footer text color */
+  .md-footer a, .md-footer {
+    color: #ffffff; /* Light text */
+  }
+}
