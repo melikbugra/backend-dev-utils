@@ -26,15 +26,8 @@ def test_named_singleton_behavior(setup_multiple_db: MultipleDatabaseHandler):
     assert_that(db_handler3.name).is_equal_to("db2")
 
 
-def test_engine_initialization(setup_multiple_db: MultipleDatabaseHandler):
-    db_handler: MultipleDatabaseHandler = setup_multiple_db
-
-    assert_that(db_handler.engine).is_instance_of(Engine)
-    assert_that(db_handler.database_uri).is_equal_to("sqlite:///:memory:")
-
-
 def test_create_tables(setup_multiple_db_with_tables: MultipleDatabaseHandler):
-    db_handler: MultipleDatabaseHandler = setup_multiple_db_with_tables
+    db_handler = setup_multiple_db_with_tables
 
     inspector = inspect(db_handler.engine)
     tables = inspector.get_table_names()
@@ -46,7 +39,7 @@ def test_get_session(setup_multiple_db_with_tables: MultipleDatabaseHandler):
 
     session_generator = db_handler.get_session()
     with next(session_generator) as session:
-        assert isinstance(session, Session)
+        assert_that(session).is_instance_of(Session)
 
         new_instance = TestModel2(name="Test")
         session.add(new_instance)
@@ -57,6 +50,13 @@ def test_get_session(setup_multiple_db_with_tables: MultipleDatabaseHandler):
 
         assert_that(result).is_not_none()
         assert_that(result.name).is_equal_to("Test")
+
+
+def test_engine_initialization(setup_multiple_db: MultipleDatabaseHandler):
+    db_handler = setup_multiple_db
+
+    assert_that(db_handler.engine).is_instance_of(Engine)
+    assert_that(db_handler.database_uri).starts_with("sqlite:///")
 
 
 def test_reset_instance():

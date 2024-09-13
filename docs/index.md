@@ -9,6 +9,7 @@ Backend Development Utilities is a library to provide python backend developers 
 
 ```console
 $ pip install backend-dev-utils
+---> 100%
 ```
 
 <!-- ```python hl_lines="3-4  6"

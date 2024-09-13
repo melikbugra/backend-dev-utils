@@ -1,7 +1,6 @@
 local_tests.py
 *.log.*
 dev.ipynb
-run_local_tests.sh
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python
